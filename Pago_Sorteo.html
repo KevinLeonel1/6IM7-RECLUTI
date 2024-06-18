@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Stackfindover: Sign in</title>
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.0.7/css/boxicons.min.css">
+        <link rel="stylesheet" type="text/css" href="Pago_SorteoCSS.css">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            .scroll-button2 {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                background-color: white;
+                color: black;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 30px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .scroll-button i {
+                margin-top: 50%;
+            }
+            .overlay-container {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .popup-box {
+                background: #fff;
+                padding: 24px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+                width: 350px;
+                height: 380px;
+                text-align: center;
+                opacity: 0;
+                transform: scale(0.8);
+                animation: fadeInUp 0.5s ease-out forwards;
+            }
+
+            .form-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .form-label {
+                margin-bottom: 10px;
+                font-size: 15px;
+                color: #444;
+                font-weight: normal;
+                text-align: center;
+            }
+
+            .form-input {
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .btn-submit,
+            .btn-close-popup {
+                padding: 12px 30px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .btn-submit {
+                background-color: #5469d4;
+                color: #fff;
+                transition: opacity 0.3s ease;
+            }
+
+            .btn-close-popup {
+                padding: 11.5px 30px;
+                margin-left: 20px;
+                top: 12px;
+                background-color: transparent; /* Elimina el fondo */
+                border: 2px solid #5469d4; /* Agrega un borde de color rojo */
+                color: #5469d4;
+                transition: opacity 0.3s ease;
+            }
+
+            .btn-submit:hover,
+            .btn-close-popup:hover {
+                opacity: 0.8;
+            }
+            .button-container2{
+                display: inline-block; /* Para que los botones estén en línea */
+                margin-top: 5%;
+            }
+            /* Keyframes for fadeInUp animation */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Animation for popup */
+            .overlay-container.show {
+                display: flex;
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body style="height: 1160px">
+        <div class="container">
+            <div class="featured-wrapper">
+                <div class="featured-list">
+                    <figure>
+                        <img src="imagenes/mitski.jpeg" alt="">
+                        <h3 class="slideshow-title">Mitski </h3>
+                        <div class="overlay-text">Miercoles 14 de Febrero a las 10:00 A.M - 3:00 A.M<br>Foro Sol, Viad. Río de la Piedad S/N, Granjas México, Iztacalco, 08400 Ciudad de México, CDMX.
+                            <div style="display: flex; align-items: center; margin-top: 2%;">
+                                <p style="color: red; margin-left: 5px;">❗ El evento tiene poca capacidad, por lo que entrará en un sorteo, en caso de que quiera completar el pago ❗</p>
+                            </div>
+                        </div>
+                        <div class="image-box">
+                            <img src="imagenes/mitski.jpeg" alt="Imagen">
+                        </div>
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+        <div style="margin-top: 3.5%;margin-left: 3.5%;width: 93vw !important;" class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+                <span style="margin-top: -1%;margin-bottom: 2%;font-weight: bold;color: #707070;" class="padding-bottom--15">Datos Personales</span>
+                <form id="stripe-login">
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="apellido_paterno">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Aldo">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="apellido_materno">Domicilio:</label>
+                            <input style="margin-left: 2%" type="text" id="domicilio" name="domicilio" placeholder="Mar Mediterráneo 227, Nextitla, Miguel Hidalgo, 11420 Ciudad de México, CDMX">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="apellido_paterno">Apellido paterno:</label>
+                            <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Palacios">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="apellido_materno">Apellido materno:</label>
+                            <input style="margin-left: 2%" type="text" id="apellido_materno" name="apellido_materno" placeholder="Godínez">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="apellido_paterno">Número telefónico:</label>
+                            <input type="text" id="numerotelefonico" name="numerotelefonico" placeholder="+52 1827 4380">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="apellido_materno">Correo electrónico:</label>
+                            <input style="margin-left: 2%" type="email" id="email" name="email" placeholder="aldoP.@gmail.com">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="metodo_pago">Tipo de método de pago:</label>
+                            <input type="text" id="metodo_pago" name="metodo_pago" placeholder="Debito">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="numero_tarjeta">Número de tarjeta:</label>
+                            <input style="margin-left: 2%" type="text" id="numero_tarjeta" name="numero_tarjeta" placeholder="4532 6132 7865 4387">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label for="fecha_caducidad">Fecha de caducidad:</label>
+                            <input type="text" id="fecha_caducidad" name="fecha_caducidad" placeholder="09/25">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="codigo_seguridad">Código de seguridad:</label>
+                            <input style="margin-left: 2%" type="text" id="codigo_seguridad" name="codigo_seguridad" placeholder="099">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="nombres_apellidos">Nombres-Apellidos:</label>
+                            <input type="text" id="nombres_apellidos" name="nombres_apellidos" placeholder="Aldo Palacios">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="localidad">Localidad:</label>
+                            <input style="margin-left: 2%" type="text" id="localidad" name="localidad" placeholder="Mar Mediterráneo 227, Nextitla, Miguel Hidalgo, 11420 Ciudad de México, CDMX">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="direccion_facturacion">Dirección de la facturación:</label>
+                            <input type="text" id="direccion_facturacion" name="direccion_facturacion" placeholder="Mar Mediterráneo 227, Nextitla, Miguel Hidalgo, 11420 Ciudad de México, CDMX">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="codigo_postal">Código postal:</label>
+                            <input style="margin-left: 2%" type="text" id="codigo_postal" name="codigo_postal" placeholder="55026">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="field padding-bottom--24">
+                            <label for="direccion_facturacion2">Dirección de la facturación 2ª Línea:</label>
+                            <input type="text" id="direccion_facturacion2" name="direccion_facturacion2" placeholder="">
+                        </div>
+                        <div class="field padding-bottom--24">
+                            <label style="margin-left: 2%" for="pais">País:</label>
+                            <input style="margin-left: 2%" type="text" id="pais" name="pais" placeholder="México">
+                        </div>
+                    </div>
+                    <div style="margin-bottom: -3%;" class="button-container">
+                        <div style="margin-top: 2%" class="field padding-bottom--24">
+                            <input type="button" style="background: linear-gradient(to right, black, #33A2FF);"
+                                   value="Ingresar al sorteo" onClick="togglePopup()">
+                        </div>
+                        <div style="margin-top: 1.9%; margin-left: 1.6%;margin-right: -0.3%;" class="field cancel-button">
+                            <a href="Asignacion_frame.html">Cancelar</a>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        <button class="scroll-button2" onclick="scrollPage()"><i class='bx bxs-chevron-down'></i></button>
+        <div id="popupOverlay"
+             class="overlay-container"> 
+            <div class="popup-box"> 
+                <h2 style="color: #5469d4;">¡Felicidades!</h2> 
+                <form class="form-container"> 
+                    <label style="margin-top:2%" class="form-label" for="name"> 
+                        El boleto: <br>Mitski<br>  fue elegido para ti, el
+                        Miercoles 14 de Febrero a las 10:00 A.M - 3:00 A.M<br>Foro Sol, Viad. Río de la Piedad S/N, Granjas México, Iztacalco, 08400 Ciudad de México, CDMX.
+                    </label> 
+                    <div class="button-container2">
+                        <a href="Compra.html" style="background: linear-gradient(to right, black, #33A2FF);"
+                                    class="btn-submit">COMPRAR</a>
+                        <button class="btn-close-popup" onclick="redirectToPagina2()">CANCELAR</button>
+                    </div>
+                </form>
+            </div> 
+        </div> 
+        <script>
+            function togglePopup() {
+                const overlay = document.getElementById('popupOverlay');
+                overlay.classList.toggle('show');
+            }
+        </script> 
+        <script>
+            let isDown = true;
+            function scrollPage() {
+                if (isDown) {
+                    window.scrollBy({
+                        top: window.innerHeight,
+                        behavior: 'smooth'
+                    });
+                    document.querySelector('.scroll-button2').innerHTML = "<i class='bx bxs-chevron-up'></i>";
+                } else {
+                    window.scrollBy({
+                        top: -window.innerHeight,
+                        behavior: 'smooth'
+                    });
+                    document.querySelector('.scroll-button2').innerHTML = "<i class='bx bxs-chevron-down'></i>";
+                }
+                isDown = !isDown;
+            }
+        </script>
+        <script>
+            function redirectToPagina1() {
+                window.location.href = "Compra.html";
+            }
+        </script>
+        <script>
+            function redirectToPagina2() {
+                window.location.href = "Compraframe.html";
+            }
+        </script>
+    </body>
+</html>

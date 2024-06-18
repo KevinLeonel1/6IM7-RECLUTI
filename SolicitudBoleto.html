@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketsale</title>
+    <link rel="stylesheet" href="Boletos.css">
+</head>
+<body>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <h1><a href="index.html">TICKETSALE</a></h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>&#128269;</button>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <nav>
+            
+              <a onclick="location.href='index.html'">Inicio</a>
+               <a onclick="location.href='GestionEventos.html'">Gestion Eventos</a>
+                <a onclick="location.href='Asignacion.html'">Asignacion</a>
+                <a onclick="location.href='entradaevento.html'">Entrada Evento</a>
+                <a onclick="location.href='validacionboleto.html'">validacion Boletos</a>
+                <a onclick="location.href='create_fan_id.html'">crear fan-ID</a>
+                <a onclick="location.href='validate_fan_id.html'">Validar Fan-ID</a>
+                <a onclick="location.href='variedades.html'">Variedades</a>
+                <a onclick="location.href='boletos_reservar.html'">Boletos Reservar</a>
+        </nav>
+    </aside>
+    <main>
+        <div class="event-detail">
+            <div class="event-image">
+                <img src="event-image.png" alt="Event Image">
+            </div>
+            <div class="event-info">
+                <h2>Alvaro Diaz Adios Felicilandia Tour</h2>
+                <p>sáb, 23 de nov de 2024, 20:00 | Lunario Pepsi, CDMX, México</p>
+                <div class="ticket-selection">
+                    <h3>Selecciona tus boletos</h3>
+                    <label><input type="radio" name="zona" value="Zona Fan"> Zona Fan</label>
+                    <div class="quantity">
+                        <button onclick="decrement('zona-fan')">-</button>
+                        <input type="text" id="zona-fan" value="0" readonly>
+                        <button onclick="increment('zona-fan')">+</button>
+                    </div>
+                    <label><input type="radio" name="zona" value="General"> General</label>
+                    <div class="quantity">
+                        <button onclick="decrement('general')">-</button>
+                        <input type="text" id="general" value="0" readonly>
+                        <button onclick="increment('general')">+</button>
+                    </div>
+                    <label><input type="radio" name="zona" value="Lounge Vip"> Lounge Vip</label>
+                    <div class="quantity">
+                        <button onclick="decrement('lounge-vip')">-</button>
+                        <input type="text" id="lounge-vip" value="0" readonly>
+                        <button onclick="increment('lounge-vip')">+</button>
+                    </div>
+                    <button class="buy-button">Comprar boletos</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="FuncionesBoletos.js"></script>
+</body>
+</html>

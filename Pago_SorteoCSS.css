@@ -1,0 +1,205 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+:root {
+    --white-color: #fff;
+    --blue-color: #4070f4;
+    --grey-color: #707070;
+    --grey-color-light: #aaa;
+}
+body {
+    background-color: #e7f2fd;
+    transition: all 0.5s ease;
+}
+body.dark {
+    background-color: #333;
+}
+body.dark {
+    --white-color: #333;
+    --blue-color: #fff;
+    --grey-color: #f2f2f2;
+    --grey-color-light: #aaa;
+}
+
+.main_container {
+    display: flex;
+    padding-top: 58px;
+}
+
+.content {
+    margin-left: 260px; /* Esta debería coincidir con el ancho de tu sidebar */
+    padding: 0; /* Elimina cualquier padding */
+    flex-grow: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+    #sidebarOpen {
+        font-size: 25px;
+        display: block;
+        margin-right: 10px;
+        cursor: pointer;
+        color: var(--grey-color);
+    }
+    .sidebar.close {
+        left: -100%;
+    }
+    .search_bar {
+        display: none;
+    }
+    .sidebar.close .bottom_content {
+        left: -100%;
+    }
+}
+/* RESET RULES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    --white: #fff;
+    --red: #e74c3c;
+    --black: #000;
+    --img-color: #ededed;
+    --overlay: rgba(0, 0, 0, 0.75);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background-color: var(--img-color);
+}
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input[type="radio"] {
+    position: absolute;
+    bottom: 0;
+    left: -9999px;
+}
+
+body {
+    color: var(--white);
+    margin: 20px 0;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 2000px;
+}
+
+/* SLIDESHOW */
+.featured-wrapper {
+    position: relative;
+}
+
+.featured-wrapper .featured-list {
+    display: grid;
+}
+
+.featured-wrapper .featured-list li {
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    transition: opacity 0.25s;
+    position: relative;
+}
+
+.featured-wrapper .featured-list img {
+    width: 100%;
+    height: 220px; /* Ajusta este valor según el tamaño que desees */
+    object-fit: cover;
+    margin-top: -2%;
+    filter: brightness(0.6); /* Reduce el brillo al 60% */
+}
+
+.featured-wrapper .featured-list .slideshow-title {
+    position: absolute;
+    top: 23%;
+    left: 20%;
+    color: var(--white);
+    font-size: 20px;
+    z-index: 3;
+    margin: 0;
+}
+
+.featured-wrapper .featured-list .overlay-text {
+    position: absolute;
+    top: 42%;
+    left: 20%;
+    color: var(--white);
+    font-size: 15px;
+    z-index: 3;
+}
+
+.featured-wrapper .featured-list .image-box {
+    position: absolute; /* Para posicionar sobre la imagen de la lista */
+    top: 20%; /* Ajusta según donde quieras posicionar */
+    left: 3%; /* Ajusta según donde quieras posicionar */
+    width: 180px; /* Ajusta el tamaño según tus necesidades */
+    height: 120px; /* Ajusta el tamaño según tus necesidades */
+    z-index: 4; /* Asegura que esté por encima de la imagen principal */
+    overflow: hidden; /* Para asegurarse de que el contenido no se desborde */
+}
+
+.featured-wrapper .featured-list .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: none; /* Si no quieres ningún filtro aplicado a esta imagen */
+}
+
+
+.custom-button {
+    background-color: #004AAD;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+}
+
+.heart-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    display: flex; /* Para centrar el contenido si es necesario */
+    align-items: center; /* Para centrar el contenido verticalmente */
+    justify-content: center; /* Para centrar el contenido horizontalmente */
+    cursor: pointer;
+    z-index: 3;
+    font-size: 25px !important;
+    color: white;
+}
+
+.sidebar .nav_link,
+.sidebar .sublink {
+    display: block; /* Asegúrate de que los enlaces se muestren en bloque */
+}
+
+.sidebar .nav_link[style*="display: none"],
+.sidebar .sublink[style*="display: none"] {
+    display: none !important; /* Fuerza a que los elementos ocultos no se muestren */
+}

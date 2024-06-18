@@ -1,0 +1,85 @@
+/* Colores obtenidos de la segunda imagen */
+:root {
+    --primary-color: #0033cc; /* Azul del sidebar */
+    --secondary-color: #ffffff; /* Blanco del fondo principal */
+    --accent-color: #000000; /* Negro para el texto y bordes */
+    --button-color: #0033cc; /* Azul para el botón */
+    --button-text-color: #ffffff; /* Blanco para el texto del botón */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.form-container {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.user-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icon::before {
+    content: '';
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    width: 60%;
+    height: 60%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(var(--button-color), 10%);
+}

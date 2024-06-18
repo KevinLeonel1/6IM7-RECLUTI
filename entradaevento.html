@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(to bottom, #000046, #1CB5E0);
+            color: white;
+            height: 100vh;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background: #333;
+        }
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-content h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .event-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 60%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .event-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .event-container h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .event-container p {
+            font-size: 18px;
+            color: #666;
+            margin: 5px 0;
+        }
+        .event-container button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .event-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>TICKETSALE</h2>
+            <nav>
+                <a href="#">Géneros</a>
+                <a href="#">Pop</a>
+                <a href="#">Rock</a>
+                <a href="#">Jazz</a>
+                <a href="#">Música latinoamericana</a>
+                <a href="#">Electrónica</a>
+                <a href="#">Variedades</a>
+                <a href="#">Perfil</a>
+                <a href="#">Boletos reservados</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <div class="event-container">
+                <h2>Título del Evento</h2>
+                <p>Fecha: 25 de junio de 2024</p>
+                <p>Hora: 19:00</p>
+                <p>Lugar: Auditorio Principal</p>
+                <button>Regístrate Ahora</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

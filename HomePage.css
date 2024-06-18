@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0B3C90;
+    color: white;
+    padding: 10px;
+    position: relative;
+    z-index: 1000; /* Ensures the header stays on top */
+}
+
+.menu-icon {
+    cursor: pointer;
+    z-index: 1001; /* Ensures the menu icon stays on top */
+}
+
+.menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px;
+    background-color: white;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #0B3C90;
+    color: white;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 999; /* Ensures the sidebar stays below the header */
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar nav h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar nav button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sidebar nav button:hover {
+    background-color: #1a4db3;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the main content horizontally */
+    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+}
+
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the events horizontally */
+    gap: 20px;
+}
+
+.event {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center; /* Centers the text */
+    max-width: 400px; /* Ensures the event blocks don't get too wide */
+}
+
+.event img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Adjust this value as needed */
+}
+
+.event p {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0B3C90;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.load-more:hover {
+    background-color: #1a4db3;
+}

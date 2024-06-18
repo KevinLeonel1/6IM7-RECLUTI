@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Datos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(to bottom, #000046, #1CB5E0);
+            color: white;
+            height: 100vh;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background: #333;
+        }
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        .main-content h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 80%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .form-container label {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container .qr-button {
+            background-color: #000046;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 18px;
+        }
+        .form-container .qr-button:hover {
+            background-color: #1CB5E0;
+        }
+        .form-container .qr-code {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .form-container .qr-code img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>TICKETSALE</h2>
+            <nav>
+              <a onclick="location.href='index.html'">Inicio</a>
+               <a onclick="location.href='GestionEventos.html'">Gestion Eventos</a>
+                <a onclick="location.href='Asignacion.html'">Asignacion</a>
+                <a onclick="location.href='entradaevento.html'">Entrada Evento</a>
+                <a onclick="location.href='validacionboleto.html'">validacion Boletos</a>
+                <a onclick="location.href='create_fan_id.html'">crear fan-ID</a>
+                <a onclick="location.href='validate_fan_id.html'">Validar Fan-ID</a>
+                <a onclick="location.href='variedades.html'">Variedades</a>
+                <a onclick="location.href='boletos_reservar.html'">Boletos Reservar</a>
+            </nav>
+        </div>
+        <div class="main-content">
+            <h1>Ingresa tus datos</h1>
+            <div class="form-container">
+                <label>Fan-ID: ____________</label><br>
+                <label>Tarjeta con la que se realizó la compra: ________</label><br>
+                <label>Firma digital: ________</label><br>
+                <label>Número de compra: ________</label><br>
+                <label>Asientos: ________</label><br><br>
+                <button class="qr-button">Genera tu código QR</button>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

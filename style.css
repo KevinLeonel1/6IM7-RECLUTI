@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+    height: 100%; /* Hace que el body y el html ocupen todo el espacio disponible */
+}
+
+body {
+    background: #f0faff;
+    padding-top: 70px; /* Ajuste para evitar que el contenido se superponga con el navbar */
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido de body se comporte como una columna */
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    background: #4a98f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Asegura que el navbar esté sobre todo el contenido */
+}
+.nav,
+.nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+.nav {
+    justify-content: space-between;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav .logo {
+    font-size: 22px;
+    font-weight: 500;
+}
+.nav .nav-links {
+    column-gap: 20px;
+    list-style: none;
+}
+.nav .nav-links a {
+    transition: all 0.2s linear;
+}
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+    display: none;
+}
+
+/* Resto de estilos CSS... */
+.Contenedorcito {
+    flex-grow: 1; /* Hace que el Contenedorcito ocupe todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    z-index: 99; /* Asegura que el Contenedorcito esté por encima de la barra de navegación */
+}
+
+.arriba {
+    flex-grow: 1;
+    border: 1px solid black; /* Añade un borde para visualizar el área */
+    display: flex;
+    flex-direction: row;
+}
+
+.abajo {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+}
+
+
+
+.izquierda_arribin {
+    flex-grow: 1;
+    border: 1px solid black; /* Añade un borde para visualizar el área */
+    max-width: 250px;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+
+.derecha_arribin {
+    flex-grow: 4;
+    border: 1px solid black; /* Añade un borde para visualizar el área */
+    padding-left: 20px;
+    padding-top: 40px;
+}
+
+.izquierda_abajin {
+    flex-grow: 3;
+    border: 1px solid black; /* Añade un borde para visualizar el área */
+}
+
+.derecha_abajin {
+    flex-grow: 2;
+    border: 1px solid black; /* Añade un borde para visualizar el área */
+}
+
+.izquierda_abajin,
+.derecha_abajin {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.comprar-button {
+    background: linear-gradient(to right, black, #33A2FF); /* Degradado de negro a azul marino */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Ajuste del tamaño del botón */
+    border: none; /* Quita el borde */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background 0.3s ease; /* Agrega una transición suave */
+    font-family: 'Open Sans', sans-serif; /* Aplica la fuente Open Sans */
+    font-size: 18px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Letras más gruesas */
+}
+
+.comprar-button:hover {
+    background: linear-gradient(to right, #001f3f, #004d80); /* Cambia el degradado al pasar el mouse */
+}
+
+.Contenedorcito2 {
+    flex-grow: 1; /* Hace que el Contenedorcito ocupe todo el espacio restante */
+    display: flex;
+    flex-direction: column;
+    z-index: 99; /* Asegura que el Contenedorcito esté por encima de la barra de navegación */
+}
+
+.Principalcin {
+    flex-grow: 1;
+    border: 1px solid black; /* Añade un borde para visualizar el área */
+    display: flex;
+    flex-direction: row;
+}
+
+/* Agrega estilos CSS aquí */
+/* Resto de estilos CSS... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; /* Aplica la fuente Open Sans */
+}
+
+.infocita {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px; /* Espacio entre la imagen y el borde inferior */
+    margin-right: 20px; /* Espacio entre la imagen y el borde derecho */
+}
+
+/* Aplicar la fuente Open Sans al texto */
+.derecha_arribin h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Estilos del botón de comprar */
+.comprar-button {
+    background: linear-gradient(to right, black, #33A2FF); /* Degradado de negro a azul marino */
+    color: white; /* Color del texto */
+    padding: 15px 25px; /* Ajuste del tamaño del botón */
+    border: none; /* Quita el borde */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background 0.3s ease; /* Agrega una transición suave */
+    font-size: 18px; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Letras más gruesas */
+    margin-top: 20px; /* Espacio entre el botón y los elementos superiores */
+    font-family: 'Open Sans', sans-serif; /* Aplica la fuente Open Sans */
+}
+
+.comprar-button:hover {
+    background: linear-gradient(to right, #001f3f, #004d80); /* Cambia el degradado al pasar el mouse */
+}
+
+/* Estilos para los contenedores de números */
+.number-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.number-container input[type="number"] {
+    width: 30px; /* Ancho fijo para el contador */
+    text-align: center; /* Centra el texto dentro del input */
+    font-size: 16px; /* Tamaño de fuente más grande */
+}
+
+.number-container button {
+    font-size: 16px; /* Tamaño de fuente más grande */
+    padding: 5px 10px; /* Ajuste del tamaño de los botones */
+}
+
+/* Ajuste de espaciado entre los contenedores */
+.number-container + .number-container {
+    margin-top: 10px;
+}
+
+/* Estilos para la distribución de la imagen y la información */
+.Principalcin {
+    display: flex;
+    flex-direction: row; /* Cambia la dirección del contenedor principal a fila */
+}
+
+.izquierda_Eventito {
+    flex: 2; /* Cambia el valor de flex a 2 para que ocupe menos espacio */
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.derecha_Eventito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    flex: 1; /* Cambia el valor de flex a 1 para que ocupe menos espacio */
+}
+
+
+.derecha_Eventito img {
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.derecha_Eventito .info p {
+    margin-bottom: 5px; /* Espacio entre cada línea de texto */
+}
+
+
+
+.izquierda_Eventito img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+.evento-info {
+    display: grid;
+    grid-template-columns: auto auto auto auto 1fr; /* Ajusta las columnas al contenido y una columna flexible para el botón */
+    column-gap: 10px; /* Espacio entre las columnas */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.evento-info p,
+.evento-info button {
+    padding: 10px; /* Ajuste del espacio interior de cada celda */
+    text-align: center; /* Centra horizontalmente el texto */
+    border: none; /* Quita el borde de cada celda */
+}
+
+.evento-info:nth-of-type(1) p:nth-of-type(3) {
+    color: #F82626;
+}
+
+.evento-info:nth-of-type(2) p:nth-of-type(3) {
+    color: #F8AC26;
+}
+
+.evento-info:nth-of-type(3) p:nth-of-type(3) {
+    color: #94D138;
+}
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" /> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Navigation Bar with Search Box</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Unicons CSS -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Open Sans', sans-serif; /* Aplica la fuente Open Sans */
+            }
+
+            body, html {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            /* navbar */
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                left: 0;
+                background-color: var(--white-color);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 30px;
+                z-index: 1000;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .logo_item {
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                font-size: 22px;
+                font-weight: 500;
+                color: var(--blue-color);
+            }
+            .navbar img {
+                width: 35px;
+                height: 35px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+            .navbar_content {
+                display: flex;
+                align-items: center;
+                column-gap: 25px;
+            }
+            .navbar_content i {
+                cursor: pointer;
+                font-size: 20px;
+                color: var(--grey-color);
+            }
+
+            .nav-links {
+                display: flex;
+                list-style: none;
+                column-gap: 25px;
+            }
+
+            .nav-links li {
+                position: relative;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: var(--grey-color);
+                font-size: 18px;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: var(--blue-color);
+            }
+
+            .search-box {
+                position: relative;
+                display: flex;
+                align-items: center;
+                background-color: var(--white-color);
+                padding: 5px 10px;
+                border-radius: 20px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .search-box input {
+                border: none;
+                outline: none;
+                padding: 5px 10px;
+                font-size: 16px;
+                border-radius: 20px;
+                width: 200px;
+                transition: width 0.3s;
+            }
+
+            .search-box input:focus {
+                width: 250px;
+            }
+
+            .search-box i {
+                color: var(--grey-color);
+                margin-left: 10px;
+            }
+
+            @media screen and (max-width: 768px) {
+                .navbar_content {
+                    display: none;
+                }
+
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 70px;
+                    right: 0;
+                    background-color: var(--white-color);
+                    width: 100%;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+
+                .nav-links.active {
+                    display: flex;
+                }
+
+                .nav-links li {
+                    width: 100%;
+                    text-align: center;
+                    padding: 15px 0;
+                    border-top: 1px solid #e0e0e0;
+                }
+
+                .search-box {
+                    display: none;
+                }
+
+                .navbar_content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                }
+            }
+
+            .navOpenBtn, .navCloseBtn {
+                display: none;
+            }
+
+            @media screen and (max-width: 768px) {
+                .navOpenBtn, .navCloseBtn {
+                    display: block;
+                    font-size: 24px;
+                    color: var(--grey-color);
+                    cursor: pointer;
+                }
+
+                .navOpenBtn {
+                    margin-right: 10px;
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100% - 70px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .content iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo_item">
+                <i class="uil uil-airplay"></i>
+                <h2>Gestión de Eventos</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Calendario</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+            <div class="navbar_content">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar..." />
+                    <i class="uil uil-search"></i>
+                </div>
+                <i class="bx bx-moon moon"></i>
+                <i class="bx bx-sun sun"></i>
+                <i class="uil uil-bars navOpenBtn"></i>
+            </div>
+        </nav>
+
+        <div class="content">
+            <iframe src="Asignacion_frame.html" title="Content Frame"></iframe>
+        </div>
+
+        <script>
+            const navOpenBtn = document.querySelector(".navOpenBtn"),
+                navCloseBtn = document.querySelector(".navCloseBtn"),
+                navLinks = document.querySelector(".nav-links");
+
+            if (navOpenBtn) {
+                navOpenBtn.addEventListener("click", () => {
+                    navLinks.classList.add("active");
+                });
+            }
+
+            if (navCloseBtn) {
+                navCloseBtn.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            }
+
+            document.getElementById('searchIcon').addEventListener('click', function() {
+                const searchBox = document.querySelector('.search-box');
+                searchBox.style.display = searchBox.style.display === 'flex' ? 'none' : 'flex';
+            });
+        </script>
+        
+
+        <script>
+            const body = document.querySelector("body"),
+                sidebar = body.querySelector("nav"),
+                toggle = body.querySelector(".toggle"),
+                searchBtn = body.querySelector(".search-box"),
+                modeSwitch = body.querySelector(".toggle-switch"),
+                modeText = body.querySelector(".mode-text");
+
+            const navOpenBtn = document.querySelector(".navOpenBtn"),
+                navCloseBtn = document.querySelector(".navCloseBtn"),
+                navLinks = document.querySelector(".nav-links");
+
+            if (navOpenBtn) {
+                navOpenBtn.addEventListener("click", () => {
+                    navLinks.classList.add("active");
+                });
+            }
+
+            if (navCloseBtn) {
+                navCloseBtn.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            }
+
+            // Sidebar submenu toggle
+            document.querySelectorAll(".submenu_item").forEach((item) => {
+                item.addEventListener("click", (e) => {
+                    const parent = e.target.closest(".item");
+                    parent.classList.toggle("show_submenu");
+                });
+            });
+
+            // Dark and light mode toggle
+            const darkModeToggle = document.querySelector(".moon"),
+                lightModeToggle = document.querySelector(".sun");
+
+            darkModeToggle.addEventListener("click", () => {
+                body.classList.add("dark");
+            });
+
+            lightModeToggle.addEventListener("click", () => {
+                body.classList.remove("dark");
+            });
+        </script>
+    </body>
+</html>
